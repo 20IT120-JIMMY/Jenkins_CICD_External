@@ -77,13 +77,13 @@ pipeline {
                 script{
                     withCredentials([usernamePassword(credentialsId: 'github', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                         sh 'git config --global user.email "20it120@charusat.edu.in"'
-                        sh 'git config --global user.name "Jimmy$$0912"'
+                        sh 'git config --global user.name "20IT120-JIMMY"'
 
                         sh 'git status'
                         sh 'git branch'
                         sh 'git config --list'
 
-                        sh "git remote set-url origin https://${USERNAME}:${PASSWORD}@github.com/20IT120-JIMMY/JenkinsCICDPipeline.git"
+                        sh "git remote set-url origin https://${USERNAME}:${PASSWORD}@github.com/20IT120-JIMMY/Jenkins_CICD_External.git"
                         sh 'git add .'
                         sh 'git commit -m "version change"'
                         sh 'git push origin HEAD:jenkins-jobs'
